@@ -1,0 +1,33 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden;color:#eaf4ff;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#030b1c,#071a38 42%,#102d59 75%,#071a38)}
+.estrellas{position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#8ecbff 1px,transparent 1.5px),radial-gradient(#d5eaff 1px,transparent 1.5px);background-size:53px 53px,87px 87px,131px 131px;background-position:0 0,25px 35px,65px 15px;opacity:.38}
+.particulas{position:fixed;inset:0;z-index:5;overflow:hidden;pointer-events:none}
+.particula{position:absolute;bottom:-30px;color:#d9edff;opacity:0;text-shadow:0 0 12px #8bcaff,0 0 24px #4b9de8;animation:flotar var(--duracion) ease-out forwards}
+@keyframes flotar{0%{transform:translate3d(0,0,0) scale(.45);opacity:0}15%{opacity:.95}100%{transform:translate3d(var(--desvio),-105vh,0) scale(1.25) rotate(180deg);opacity:0}}
+header{text-align:center;padding:65px 20px 35px}
+header h1{margin:12px 0;color:#b8dcff;font-size:clamp(2rem,8vw,3.5rem);text-shadow:0 0 20px #398bdb}
+header p{color:#c5d9f3}header span{color:#d6eaff;font-size:35px}header b{display:block;margin-top:15px;font-size:35px}
+main{width:100%;max-width:850px;margin:auto;padding:15px}
+.intro{text-align:center;margin-bottom:35px;padding:30px 20px;border:1px solid #ffffff44;border-radius:25px;background:#1436648c;box-shadow:0 0 25px #2677cc26}
+.intro h2{margin-bottom:15px;color:#d1e8ff}.intro p{color:#c4d9f2;line-height:1.8}
+.contador{display:flex;flex-direction:column;align-items:center;margin-top:25px}.contador strong{color:#8dc8ff;font-size:2.5rem}.contador small{color:#b8d6f5}.intro .desliza{margin-top:20px;color:#8fc8f8;font-size:.9rem}
+.mensajes{display:flex;flex-direction:column;gap:9px;padding:5px}
+.mensaje{padding:15px 10px;text-align:center;color:#d9ecff;font-size:1rem;font-weight:500;border:1px solid #94c9ff29;border-radius:12px;background:linear-gradient(90deg,#0f315ebf,#1f538ba6,#0f315ebf);box-shadow:0 3px 12px #0002;animation:aparecer .5s ease both}
+.mensaje:nth-child(5n){color:#a9d5ff;border-color:#9ed0ff59}
+@keyframes aparecer{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.final{position:relative;isolation:isolate;overflow:hidden;margin:65px 0 45px;padding:45px 20px;text-align:center;border:1px solid #659ed6;border-radius:25px;background:linear-gradient(145deg,#174177e6,#051633f2);box-shadow:0 0 25px #4d9eeb33,inset 0 0 20px #5b9cda14;transition:box-shadow .6s,border-color .6s,transform .6s}
+.final:before{content:"";position:absolute;inset:-60%;z-index:-1;opacity:0;background:conic-gradient(transparent,#85c7ff33,transparent 30%);transition:opacity .7s}
+.final.celebrado{border-color:#b8e0ff;box-shadow:0 0 35px #69b9ff8c,0 0 90px #418fdc38;transform:translateY(-4px)}
+.final.celebrado:before{opacity:1;animation:girar 8s linear infinite}
+@keyframes girar{to{transform:rotate(360deg)}}
+.destello{margin-bottom:20px;color:#d3eaff;font-size:40px}.final h2{margin:20px 0 25px;color:#c4e2ff;font-size:1.3rem}
+.mensaje-final{color:#fff;font-size:clamp(1.5rem,6vw,2.3rem);font-weight:bold;line-height:1.5;text-shadow:0 0 15px #65baff}
+.mensaje-final span{display:inline-block}.final.celebrado .mensaje-final span{animation:infinito 1.8s ease-in-out infinite}
+@keyframes infinito{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.2) rotate(8deg)}}
+.despedida{margin-top:25px;color:#b9d9f7;line-height:1.8}.decoracion{margin-top:25px;font-size:25px}
+button{margin-top:28px;padding:12px 18px;color:#082044;font-size:.95rem;font-weight:700;border:0;border-radius:999px;background:linear-gradient(90deg,#c9e7ff,#83c3fa);box-shadow:0 0 18px #78beff40;cursor:pointer}
+button:active{transform:scale(.96)}
+footer{padding:25px 15px 35px;color:#8eafd2;font-size:.85rem;text-align:center}
+@media(max-width:480px){header{padding-top:45px}.intro{padding:25px 15px}.mensaje{padding:14px 8px;font-size:.95rem}.final{padding:35px 15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
